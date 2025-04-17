@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/icon-robot-chat.svg">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
+    <link
+      rel="preload"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"
+    />
+    <link rel="stylesheet" href="./icons/fontIcon.css">
+    <link rel="stylesheet" href="./output/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/lib/marked.umd.min.js"></script>
+    <title>Knitlog lite</title>
+  </head>
+  <body>
+    <div id="knitlog" class="report-wrapper">
+      <div class="knit-header">
+        <div class="title">
+          <i class="icon-playground"></i>
+          Playground
+        </div>
+        <div class="line"></div>
+        <div class="description">채팅 형식으로 질문을 하면 문맥 이해를 통한 고도화 된 AI 기반의 답변을 받아볼 수 있습니다.</div>
+        <div class="login-wrapper show">
+          <input type="text" placeholder="ID" class="user-id" />
+          <input type="text" placeholder="PASSWORD" class="user-pw" />
+        </div>
+        <div class="user-profile">
+          <div class="profile-btn kn-button icon" onclick="login()">
+            <i class="icon icon-profile"></i>
+          </div>
+
+        </div>
+      </div>
+      <div class="knit-contents">
+        <div class="chat-init-btn kn-button icon outline shadow" onclick="initchatList()">
+          초기화
+          <i class="icon-refresh"></i>
+        </div>
+        <div class="chat-container">
+          <div class="chat-contents-list">
+            <div class="contents-item intro knit-answer">
+              <div class="chat-profile">
+              </div>
+              <div class="chat-detail">
+                <div class="user-name">UX GPT</div>
+                <div class="chat-detail-contents">
+                  <p>안녕하세요, UX GPT for CS입니다!<br>
+                    뷰저블 서비스, 데이터 분석에 관한 궁금증이 있으시다면,<br>
+                    저에게 질문해주세요 🥰
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ask-container">
+          <div class="ask-header">
+            <div class="pause-btn" onclick="stopAnswer()">
+              <span class="pause-icon"></span>
+              생성 멈추기
+            </div>
+          </div>
+          <div class="ask-wrapper">
+            <textarea name="ask" id="insert-ask" placeholder="궁금한 내용을 질문하세요." rows="1"></textarea>
+            <div class="asking-btn kn-button icon" onclick="runAskQuestion()">
+              <i class="icon icon-send"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
